@@ -41,9 +41,9 @@ $RECYCLE.BIN/
 #-------------------------
 # These should never be under version control,
 # as it poses a security risk.
-.env
-.vagrant
-Vagrantfile
+#.env
+#.vagrant
+#Vagrantfile
 
 #-------------------------
 # Temporary Files
