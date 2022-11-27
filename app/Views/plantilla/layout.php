@@ -21,6 +21,9 @@
         <!-- Custom Fonts -->
         <link href="<?=base_url()?>/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+        <!-- Css adicionales -->
+        <?= $this->renderSection('css') ?>
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -139,6 +142,10 @@
                                 <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                             </li>
 
+                            <li>
+                                <a href="usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                            </li>
+
                             <!-- <li>
                                 <a href="pagina.php"><i class="fa fa-table fa-fw"></i> Pagina</a>
                             </li> -->
@@ -198,6 +205,9 @@
 
         <!-- Custom Theme JavaScript -->
         <script src="<?=base_url()?>/js/startmin.js"></script>
+
+        <!-- Javascript adicionales -->
+        <?= $this->renderSection('js') ?>
 
     </body>
 </html>
