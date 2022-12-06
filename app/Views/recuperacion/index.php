@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Login</title>
+    <title>Recuperar contraseña</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?=base_url()?>/css/bootstrap.min.css" rel="stylesheet">
@@ -34,25 +34,25 @@
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Iniciar sesion</h3>
+                        <h3 class="panel-title">Cambiar contraseña</h3>
                     </div>
                     <div class="panel-body">
-                        <form action="<?=base_url()?>/Login/validar" role="form" method="POST">
+                        <form action="<?=base_url()?>/Recuperacion/cambiar" role="form" method="POST">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Correo" name="correo" type="email" autofocus required>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Contraseña" name="contra" type="password" required value="">
+                                    <input class="form-control" placeholder="Contraseña actual" name="contra_actual" type="password" required value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Nueva contraseña" name="nueva_contra" type="password" required value="">
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button href="index.html" class="btn btn-lg btn-success btn-block">Login</button>
+                                <button href="index.html" class="btn btn-lg btn-success btn-block">Cambiar contraseña</button>
                             </fieldset>
                             <hr />
-                            <a href="/Registro/">Crear cuenta</a>
-                            <br>
-                            <a href="/Recuperacion/">Cambiar contraseña</a>
-
+                            <a href="/Login/">Login</a>
                         </form>
                     </div>
                 </div>
