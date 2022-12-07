@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 use App\Models\SorteoModel;
+use App\Models\UsuarioModel;
 
 class Sorteo extends BaseController
 {
 
     private $sorteoModel;
+    private $usuarioModel;
     
     function __construct() {
         $this->sorteoModel = new SorteoModel();
+        $this->usuarioModel = new UsuarioModel();
 
     }
 
@@ -22,7 +25,7 @@ class Sorteo extends BaseController
             $usuario = [
                 "nombre" => $_SESSION["nombre_completo"]
             ];
-            $sorteos = $this->sorteoModel->findAll();
+            $sorteos = $this->sorteoModel->findAllJoins();
     
             $data = [
                 "usuario" => $usuario,
@@ -47,10 +50,11 @@ class Sorteo extends BaseController
             $usuario = [
                 "nombre" => $_SESSION["nombre_completo"]
             ];
-            $sorteos = $this->sorteoModel->findAll();
+            $usuarios = $this->usuarioModel->findAll();
     
             $data = [
-                "usuario" => $usuario
+                "usuario" => $usuario,
+                "usuarios" => $usuarios
             ];
             
             return view("/sorteo/create", $data);
@@ -94,9 +98,11 @@ class Sorteo extends BaseController
                 "nombre" => $_SESSION["nombre_completo"]
             ];
             $sorteo = $this->sorteoModel->find($id);
+            $usuarios = $this->usuarioModel->findAll();
 
             $data = [
                 "sorteo" => $sorteo,
+                "usuarios" => $usuarios,
                 "usuario" => $usuario
                     ];
 

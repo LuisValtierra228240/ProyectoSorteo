@@ -85,15 +85,15 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
+                                <a href="<?=base_url();?>/index.php"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                             </li>
 
                             <li>
-                                <a href="usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                                <a href="<?=base_url();?>/usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                             </li>
 
                             <li>
-                                <a href="sorteo"><i class="fa fa-ticket fa-fw"></i> Sorteos</a>
+                                <a href="<?=base_url();?>/sorteo"><i class="fa fa-ticket fa-fw"></i> Sorteos</a>
                             </li>
 
                             <!-- <li>

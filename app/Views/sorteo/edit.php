@@ -47,7 +47,21 @@
 
                             <div class="form-group">
                                 <label>Creador del Sorteo:</label>
-                                <input class="form-control" name="idCreador" value="<?=$sorteo["idCreador"]?>"/>
+                                <select class="form-control" name="idCreador">
+                                    <?php
+                                     foreach ($usuarios as $usuario) {
+                                        if ($usuario["id"] == $sorteo["idCreador"]){
+                                    ?>
+                                        <option selected value="<?=$usuario["id"]?>"><?=$usuario["nombre_completo"]?></option>
+                                    <?php
+                                        } else { 
+                                    ?>
+                                        <option value="<?=$usuario["id"]?>"><?=$usuario["nombre_completo"]?></option>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </select>
                             </div>
 
                             <div class="form-group">

@@ -47,7 +47,15 @@
 
                             <div class="form-group">
                                 <label>Creador del Sorteo:</label>
-                                <input class="form-control" name="idCreador"/>
+                                <select class="form-control" name="idCreador">
+                                    <?php
+                                     foreach ($usuarios as $usuario) { 
+                                    ?>
+                                    <option value="<?=$usuario["id"]?>"><?=$usuario["nombre_completo"]?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
 
                             <div class="form-group">

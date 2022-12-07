@@ -37,15 +37,15 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" style="width: 5%">id</th>
-                                        <th scope="col">nombre</th>
-                                        <th scope="col">idGanador</th>
-                                        <th scope="col">fechaSorteo</th>
-                                        <th scope="col">fechaCreacion</th>
-                                        <th scope="col">precioBoleto</th>
-                                        <th scope="col">premio</th>
-                                        <th scope="col">descripcion</th>
-                                        <th scope="col">idCreador</th>
-                                        <th scope="col">cantidadBoletos</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Ganador</th>
+                                        <th scope="col">Fecha del Sorteo</th>
+                                        <th scope="col">Fecha de Creacion</th>
+                                        <th scope="col">Precio del Boleto</th>
+                                        <th scope="col">Premio</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Creador</th>
+                                        <th scope="col">Cantidad de Boletos</th>
                                         <th scope="col" style="width: 5%">Acciones</th>
                                     </tr>
                                 </thead>
@@ -62,7 +62,7 @@
                                             <?=$sorteo["nombre"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["idGanador"]?>
+                                            <?=$sorteo["nombreGanador"]?>
                                         </td>
                                         <td>
                                             <?=$sorteo["fechaSorteo"]?>
@@ -71,16 +71,16 @@
                                             <?=$sorteo["fechaCreacion"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["precioBoleto"]?>
+                                            $<?=$sorteo["precioBoleto"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["premio"]?>
+                                            $<?=$sorteo["premio"]?>
                                         </td>
                                         <td>
                                             <?=$sorteo["descripcion"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["idCreador"]?>
+                                            <?=$sorteo["nombreCreador"]?>
                                         </td>
                                         <td>
                                             <?=$sorteo["cantidadBoletos"]?>
@@ -117,8 +117,8 @@
 <script>
     $(document).ready(function () {
         $('#tabla').DataTable({
-            "oLanguage": {
-                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+            "language": {
+                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-MX.json"
             }
         });
     });
