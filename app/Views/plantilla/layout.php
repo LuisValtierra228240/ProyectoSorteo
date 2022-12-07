@@ -92,6 +92,10 @@
                                 <a href="usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
                             </li>
 
+                            <li>
+                                <a href="sorteo"><i class="fa fa-ticket fa-fw"></i> Sorteos</a>
+                            </li>
+
                             <!-- <li>
                                 <a href="pagina.php"><i class="fa fa-table fa-fw"></i> Pagina</a>
                             </li> -->

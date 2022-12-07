@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UsuarioModel;
+use App\Models\SorteoModel;
 
-class Usuario extends BaseController
+class Sorteo extends BaseController
 {
 
-    private $usuarioModel;
+    private $sorteoModel;
     
     function __construct() {
-        $this->usuarioModel = new UsuarioModel();
+        $this->sorteoModel = new SorteoModel();
     }
 
     public function index()
@@ -21,14 +21,14 @@ class Usuario extends BaseController
             $usuario = [
                 "nombre" => $_SESSION["nombre_completo"]
             ];
-            $usuarios = $this->usuarioModel->findAll();
+            $sorteos = $this->sorteoModel->findAll();
     
             $data = [
                 "usuario" => $usuario,
-                "usuarios" => $usuarios
+                "sorteos" => $sorteos
             ];
             
-            return view('usuario/index', $data);
+            return view('sorteo/index', $data);
         }
         
         else {

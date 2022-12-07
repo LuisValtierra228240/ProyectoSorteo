@@ -37,9 +37,6 @@
                                     <tr>
                                         <th scope="col">id</th>
                                         <th scope="col">Nombre</th>
-                                        <th scope="col">Telefono</th>
-                                        <th scope="col">Dirección</th>
-                                        <th scope="col">Email</th>
                                         <th scope="col">Contraseña</th>
                                     </tr>
                                 </thead>
@@ -53,18 +50,7 @@
                                             <?=$usuario["id"]?>
                                         </th>
                                         <td>
-                                            <?=$usuario["nombre"]?>
-                                            <?=$usuario["apellidoPaterno"]?>
-                                            <?=$usuario["apellidoMaterno"]?>
-                                        </td>
-                                        <td>
-                                            <?=$usuario["telefono"]?>
-                                        </td>
-                                        <td>
-                                            <?=$usuario["direccion"]?>
-                                        </td>
-                                        <td>
-                                            <?=$usuario["email"]?>
+                                            <?=$usuario["nombre_completo"]?>
                                         </td>
                                         <td>
                                             <?=$usuario["contrasena"]?>
