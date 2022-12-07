@@ -29,13 +29,15 @@
                         Sorteos
                     </div>
                     <div class="panel-body">
-                        <div class="table-responsive">
+                        <a href="<?=base_url()?>/sorteo/create" class="btn btn-primary">Agregar nuevo</a>
+                        <div class="table-responsive" style="margin-top: 15px">
 
                             <!-- tabla aquí -->
                             <table class="table table-striped table-bordered table-hover" id="tabla">
                                 <thead>
                                     <tr>
                                         <th scope="col" style="width: 5%">id</th>
+                                        <th scope="col">nombre</th>
                                         <th scope="col">idGanador</th>
                                         <th scope="col">fechaSorteo</th>
                                         <th scope="col">fechaCreacion</th>
@@ -44,7 +46,7 @@
                                         <th scope="col">descripcion</th>
                                         <th scope="col">idCreador</th>
                                         <th scope="col">cantidadBoletos</th>
-                                        <!-- <th scope="col" style="width: 5%">Acciones</th> -->
+                                        <th scope="col" style="width: 5%">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -56,6 +58,9 @@
                                         <th scope="row">
                                             <?=$sorteo["id"]?>
                                         </th>
+                                        <td>
+                                            <?=$sorteo["nombre"]?>
+                                        </td>
                                         <td>
                                             <?=$sorteo["idGanador"]?>
                                         </td>
@@ -79,6 +84,10 @@
                                         </td>
                                         <td>
                                             <?=$sorteo["cantidadBoletos"]?>
+                                        </td>
+                                        <td>
+                                        <a href="/sorteo/edit/<?=$sorteo['id']?>" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
+                                        <a onclick="eliminar(<?=$sorteo['id']?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
 
@@ -115,8 +124,30 @@
     });
 </script>
 
+<script>
+    function eliminar(id) {
+    Swal.fire({
+        title: '¿Está seguro que desea eliminar el registro?',
+        text: "¡Se eliminará permanentemente!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            location.href = "<?base_url()?>/sorteo/delete/" + id;
+        }
+    })
+}
+</script>
 <!-- DataTables JavaScript -->
 <script src="../js/dataTables/jquery.dataTables.min.js"></script>
 <script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+
+<!-- Sweet Alert 2 JavaScript-->
+<script src="../js/sweetalert2.js"></script>
 
 <?= $this->endSection() ?>
