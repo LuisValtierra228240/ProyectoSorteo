@@ -96,6 +96,10 @@
                                 <a href="<?=base_url();?>/sorteo"><i class="fa fa-ticket fa-fw"></i> Sorteos</a>
                             </li>
 
+                            <li>
+                                <a href="<?=base_url();?>/boleto"><i class="fa fa-ticket fa-fw"></i> Boletos</a>
+                            <li>
+
                             <!-- <li>
                                 <a href="pagina.php"><i class="fa fa-table fa-fw"></i> Pagina</a>
                             </li> -->

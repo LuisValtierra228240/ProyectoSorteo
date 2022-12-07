@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Tabla Sorteos</h1>
+                <h1 class="page-header">Tabla Boletos</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -26,69 +26,50 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Sorteos
+                        Boletos
                     </div>
                     <div class="panel-body">
-                        <a href="<?=base_url()?>/sorteo/create" class="btn btn-primary">Agregar nuevo</a>
                         <div class="table-responsive" style="margin-top: 15px">
 
                             <!-- tabla aquí -->
                             <table class="table table-striped table-bordered table-hover" id="tabla">
                                 <thead>
                                     <tr>
-                                        <th scope="col" style="width: 5%">id</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Ganador</th>
-                                        <th scope="col">Fecha del Sorteo</th>
-                                        <th scope="col">Fecha de Creacion</th>
-                                        <th scope="col">Precio del Boleto</th>
-                                        <th scope="col">Premio</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Creador</th>
-                                        <th scope="col">Cantidad de Boletos</th>
-                                        <th scope="col" style="width: 5%">Acciones</th>
+                                        <th scope="col" style="width: 10%">No. Boleto</th>
+                                        <th scope="col">nombre sorteo</th>
+                                        <th scope="col">numero de boleto</th>
+                                        <th scope="col">sorteo</th>
+                                        <th scope="col">fecha realizacion</th>
+                                        <th scope="col">pagado</th>
+                                        <th scope="col" style="width: 5%;">acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                        foreach ($sorteos as $sorteo) {
+                                        foreach ($boletos as $boleto) {
                                         ?>
 
                                     <tr>
                                         <th scope="row">
-                                            <?=$sorteo["id"]?>
+                                            <?=$boleto->numero_boleto?>
                                         </th>
                                         <td>
-                                            <?=$sorteo["nombre"]?>
+                                            <?=$boleto->nombre_sorteo?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["nombreGanador"]?>
+                                            <?=$boleto->numero_boleto?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["fechaSorteo"]?>
+                                            <?=$boleto->nombre_sorteo?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["fechaCreacion"]?>
+                                            <?=$boleto->fecha_sorteo?>
                                         </td>
                                         <td>
-                                            $<?=$sorteo["precioBoleto"]?>
-                                        </td>
+                                            <?=$boleto->estado_pago=="PAGADO" ? "SI" : "NO"?>
+
                                         <td>
-                                            $<?=$sorteo["premio"]?>
-                                        </td>
-                                        <td>
-                                            <?=$sorteo["descripcion"]?>
-                                        </td>
-                                        <td>
-                                            <?=$sorteo["nombreCreador"]?>
-                                        </td>
-                                        <td>
-                                            <?=$sorteo["cantidadBoletos"]?>
-                                        </td>
-                                        <td>
-                                        <a href="/sorteo/edit/<?=$sorteo['id']?>" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                        <a onclick="eliminar(<?=$sorteo['id']?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
-                                        <a href="/boleto/comprar/<?=$sorteo['id']?>/<?=$usuario["id"]?>" class="btn btn-success" style="margin-top:5px">Comprar boleto</a>
+                                        <a onclick="eliminar(<?=$boleto->id_boleto?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
 
@@ -118,8 +99,8 @@
 <script>
     $(document).ready(function () {
         $('#tabla').DataTable({
-            "language": {
-                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-MX.json"
+            "oLanguage": {
+                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
             }
         });
     });
@@ -139,7 +120,7 @@
     }).then((result) => {
         if (result.isConfirmed) {
 
-            location.href = "/sorteo/delete/" + id;
+            location.href = "<?base_url()?>/sorteo/delete/" + id;
         }
     })
 }

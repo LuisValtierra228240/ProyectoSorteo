@@ -23,10 +23,11 @@ class Sorteo extends BaseController
 
         if (isset($_SESSION["nombre_completo"])) {
             $usuario = [
-                "nombre" => $_SESSION["nombre_completo"]
+                "nombre" => $_SESSION["nombre_completo"],
+                "id" => $_SESSION["id"]
             ];
             $sorteos = $this->sorteoModel->findAllJoins();
-    
+        
             $data = [
                 "usuario" => $usuario,
                 "sorteos" => $sorteos

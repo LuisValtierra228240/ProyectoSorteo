@@ -30,7 +30,8 @@ class Login extends BaseController
                     
                         session_start();
                         $nombre = $usuarios[0]["nombre_completo"];
-
+                        
+                        $_SESSION["id"] = $usuarios[0]["id"];
                         $_SESSION["correo"] = $correo;
                         $_SESSION["contra"] = $contra;
                         $_SESSION["nombre_completo"] = $nombre;
