@@ -20,6 +20,7 @@
         
                         <!--Formulario aquí-->
                         <form action="<?=base_url();?>/sorteo/update/<?=$sorteo["id"];?>" method="POST">
+                                <input type="hidden" name="idGanador" value="<?=$sorteo["idGanador"]?>">
                             <div class="form-group">
                                 <label>Nombre:</label>
                                 <input class="form-control" name="nombre" value="<?=$sorteo["nombre"]?>"/>
