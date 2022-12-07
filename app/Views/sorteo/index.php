@@ -138,7 +138,7 @@
     }).then((result) => {
         if (result.isConfirmed) {
 
-            location.href = "<?base_url()?>/sorteo/delete/" + id;
+            location.href = "/sorteo/delete/" + id;
         }
     })
 }
