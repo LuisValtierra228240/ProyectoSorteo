@@ -49,7 +49,8 @@ class Sorteo extends BaseController
 
         if (isset($_SESSION["nombre_completo"])) {
             $usuario = [
-                "nombre" => $_SESSION["nombre_completo"]
+                "nombre" => $_SESSION["nombre_completo"],
+                "id" => $_SESSION["id"]
             ];
             $usuarios = $this->usuarioModel->findAll();
     
@@ -96,7 +97,8 @@ class Sorteo extends BaseController
 
         if (isset($_SESSION["nombre_completo"])) {
             $usuario = [
-                "nombre" => $_SESSION["nombre_completo"]
+                "nombre" => $_SESSION["nombre_completo"],
+                "id" => $_SESSION["id"]
             ];
             $sorteo = $this->sorteoModel->find($id);
             $usuarios = $this->usuarioModel->findAll();
@@ -132,7 +134,30 @@ class Sorteo extends BaseController
 
         $this->sorteoModel ->update($id, $sorteo);
         return redirect()->to("/sorteo");
+    }
 
+    public function show($id)
+    {
+        session_start();
+
+        if (isset($_SESSION["nombre_completo"])) {
+            $usuario = [
+                "nombre" => $_SESSION["nombre_completo"],
+                "id" => $_SESSION["id"]
+            ];
+            $sorteo = $this->sorteoModel->findJoins($id);
+
+            $data = [
+                "sorteo" => $sorteo,
+                "usuario" => $usuario
+                    ];
+
+            return view("/sorteo/show", $data);
+
+        } else {
+            header("location: /Login");
+            exit();
+               }
     }
 
     public function delete($id)

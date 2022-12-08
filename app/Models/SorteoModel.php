@@ -33,4 +33,16 @@ class SorteoModel extends Model
         findAll();
     }
 
+    public function findJoins($id){
+        $select = "$this->table.*, ganador.nombre_completo AS nombreGanador, 
+        ganador.correo AS ganadorCorreo, ganador.contrasena AS ganadorContrasena, 
+        creador.nombre_completo AS nombreCreador, creador.correo AS creadorCorreo, 
+        creador.contrasena AS creadorContrasena";
+
+        return $this->asArray()->select($select)->
+        join('usuarios2 as ganador', 'ganador.id = sorteo.idGanador', 'left')->
+        join('usuarios2 as creador', 'creador.id = sorteo.idCreador', 'left')->
+        find($id);
+    }
+
 }

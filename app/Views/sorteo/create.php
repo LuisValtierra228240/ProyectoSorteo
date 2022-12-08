@@ -20,6 +20,7 @@
         
                         <!--Formulario aquí-->
                         <form action="<?=base_url();?>/sorteo/store" method="POST">
+                            <input type="hidden" name="idCreador" value="<?=$usuario["id"]?>">
                             <div class="form-group">
                                 <label>Nombre:</label>
                                 <input class="form-control" name="nombre"/>
@@ -46,25 +47,17 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Creador del Sorteo:</label>
-                                <select class="form-control" name="idCreador">
-                                    <?php
-                                     foreach ($usuarios as $usuario) { 
-                                    ?>
-                                    <option value="<?=$usuario["id"]?>"><?=$usuario["nombre_completo"]?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label>Cantidad de Boletos:</label>
                                 <select class="form-control" name="cantidadBoletos">
                                     <option value="10">10 Boletos</option>
                                     <option value="100">100 Boletos</option>
                                     <option value="1000">1000 Boletos</option>
                                 </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Imagen:</label>
+                                <input class="form-control" name="imagen"/>
                             </div>
         
                             <button class="btn btn-success" type="submit">Guardar</button>

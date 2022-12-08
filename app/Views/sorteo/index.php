@@ -39,14 +39,11 @@
                                         <th scope="col" style="width: 5%">id</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Ganador</th>
-                                        <th scope="col">Fecha del Sorteo</th>
-                                        <th scope="col">Fecha de Creacion</th>
-                                        <th scope="col">Precio del Boleto</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Precio</th>
                                         <th scope="col">Premio</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Creador</th>
-                                        <th scope="col">Cantidad de Boletos</th>
-                                        <th scope="col" style="width: 5%">Acciones</th>
+                                        <th scope="col">Boletos</th>
+                                        <th scope="col" style="width: 12%">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -62,13 +59,10 @@
                                             <?=$sorteo["nombre"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["nombreGanador"]?>
+                                            <?=($sorteo["idGanador"] != "") ? $sorteo["nombreGanador"] : "Sin ganador"?>
                                         </td>
                                         <td>
                                             <?=$sorteo["fechaSorteo"]?>
-                                        </td>
-                                        <td>
-                                            <?=$sorteo["fechaCreacion"]?>
                                         </td>
                                         <td>
                                             $<?=$sorteo["precioBoleto"]?>
@@ -77,18 +71,18 @@
                                             $<?=$sorteo["premio"]?>
                                         </td>
                                         <td>
-                                            <?=$sorteo["descripcion"]?>
-                                        </td>
-                                        <td>
-                                            <?=$sorteo["nombreCreador"]?>
-                                        </td>
-                                        <td>
                                             <?=$sorteo["cantidadBoletos"]?>
                                         </td>
                                         <td>
-                                        <a href="/sorteo/edit/<?=$sorteo['id']?>" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                        <a onclick="eliminar(<?=$sorteo['id']?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
-                                        <a href="/boleto/comprar/<?=$sorteo['id']?>/<?=$usuario["id"]?>" class="btn btn-success" style="margin-top:5px">Comprar boleto</a>
+                                            <a href="/sorteo/show/<?=$sorteo['id']?>" class="btn btn-primary btn-circle"><i class="fa fa-eye"></i></a>
+                                            <?php
+                                            if($usuario["id"] == $sorteo["idCreador"]) {
+                                            ?>
+                                            <a href="/sorteo/edit/<?=$sorteo['id']?>" class="btn btn-success btn-circle"><i class="fa fa-pencil"></i></a>
+                                            <a onclick="eliminar(<?=$sorteo['id']?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+                                            <?php
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
 
