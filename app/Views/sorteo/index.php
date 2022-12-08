@@ -30,6 +30,7 @@
                     </div>
                     <div class="panel-body">
                         <a href="<?=base_url()?>/sorteo/create" class="btn btn-primary">Agregar nuevo</a>
+                        <a href="<?=base_url()?>/ganador" class="btn btn-success">Ver todos los Ganadores</a>
                         <div class="table-responsive" style="margin-top: 15px">
 
                             <!-- tabla aquí -->

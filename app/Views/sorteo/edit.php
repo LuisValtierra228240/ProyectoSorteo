@@ -21,6 +21,7 @@
                         <!--Formulario aquí-->
                         <form action="<?=base_url();?>/sorteo/update/<?=$sorteo["id"];?>" method="POST">
                             <input type="hidden" name="idCreador" value="<?=$sorteo["idCreador"]?>">
+                            <input type="hidden" name="fechaCreacion" value="<?=$sorteo["fechaCreacion"]?>">
                                 <?php
                                 if ($sorteo["idGanador"] != "") {
                                 ?>

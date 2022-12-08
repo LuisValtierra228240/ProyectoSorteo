@@ -33,10 +33,18 @@
                                         <?php
                                         } else {
                                         ?>
-                                        <center><a href="<?=base_url()?>/boleto/comprar/<?=$sorteo['id']?>/<?=$usuario["id"]?>" class="btn btn-success" style="margin-top:30px">Comprar boleto</a></center>
+                                        <center><a href="<?=base_url()?>/boleto/create/<?=$sorteo['id']?>" class="btn btn-success" style="margin-top:30px">Comprar boleto</a></center>
+                                        <?php
+                                            if($usuario["id"] == $sorteo["idCreador"]) {
+                                            ?>
+                                            <center><a href="<?=base_url()?>/ganador/create/<?=$sorteo['id']?>" class="btn btn-warning" style="margin-top:30px">Asignar Ganador</a></center>
+                                            <?php
+                                            }
+                                            ?>
                                         <?php
                                         }
                                         ?>
+                                        <center><a href="<?=base_url()?>/boleto/index/<?=$sorteo['id']?>" class="btn btn-primary" style="margin-top:30px">Ver boletos del sorteo</a></center>
                                     </ul>
                                 </div>
                             </div>

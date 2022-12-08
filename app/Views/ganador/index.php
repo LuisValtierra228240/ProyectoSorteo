@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Tabla Boletos</h1>
+                <h1 class="page-header">Tabla Ganadores</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -26,63 +26,30 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Boletos
+                        Ganadores
                     </div>
                     <div class="panel-body">
-                        <div class="table-responsive" style="margin-top: 15px">
+                        <div class="table-responsive">
 
                             <!-- tabla aquí -->
                             <table class="table table-striped table-bordered table-hover" id="tabla">
                                 <thead>
                                     <tr>
-                                        <th scope="col" style="width: 10%">id</th>
-                                        <th scope="col">nombre sorteo</th>
-                                        <th scope="col">numero de boleto</th>
-                                        <th scope="col">sorteo</th>
-                                        <th scope="col">fecha realizacion</th>
-                                        <th scope="col">pagado</th>
-                                        <th scope="col" style="width: 8%;">acciones</th>
+                                        <th scope="col">Nombre del Ganador</th>
+                                        <th scope="col">Sorteo Ganado</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                        foreach ($boletos as $boleto) {
+                                        foreach ($sorteos as $sorteo) {
                                         ?>
 
                                     <tr>
-                                        <th scope="row">
-                                            <?=$boleto->id_boleto?>
-                                        </th>
                                         <td>
-                                            <?=$boleto->nombre_sorteo?>
+                                            <?=$sorteo["nombreGanador"]?>
                                         </td>
                                         <td>
-                                            <?=$boleto->numero_boleto?>
-                                        </td>
-                                        <td>
-                                            <?=$boleto->nombre_sorteo?>
-                                        </td>
-                                        <td>
-                                            <?=$boleto->fecha_sorteo?>
-                                        </td>
-                                        <td>
-                                            <?=$boleto->estado_pago=="PAGADO" ? "SI" : "NO"?>
-
-                                        <td>
-                                        <?php
-                                            if($boleto->id_usuario == $usuario["id"]) {
-                                            ?>
-                                            <?php
-                                            if($boleto->estado_pago!="PAGADO") {
-                                            ?>
-                                            <a href="/boleto/edit/<?=$boleto->id_boleto?>" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></a>
-                                            <?php
-                                            }
-                                            ?>
-                                            <a onclick="eliminar(<?=$boleto->id_boleto?>)" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
-                                            <?php
-                                            }
-                                            ?>
+                                            <?=$sorteo["nombre"]?>
                                         </td>
                                     </tr>
 
@@ -112,8 +79,8 @@
 <script>
     $(document).ready(function () {
         $('#tabla').DataTable({
-            "oLanguage": {
-                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+            "language": {
+                "sUrl": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-MX.json"
             }
         });
     });
@@ -133,7 +100,7 @@
     }).then((result) => {
         if (result.isConfirmed) {
 
-            location.href = "<?base_url()?>/sorteo/delete/" + id;
+            location.href = "/sorteo/delete/" + id;
         }
     })
 }
