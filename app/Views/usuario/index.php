@@ -36,7 +36,12 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">id</th>
+                                        <th scope="col">Foto</th>
                                         <th scope="col">Nombre</th>
+                                        <th scope="col">Direccion</th>
+                                        <th scope="col">telefono</th>
+                                        <th scope="col">Correo</th>
+
                                         <th scope="col">Contraseña</th>
                                     </tr>
                                 </thead>
@@ -50,7 +55,19 @@
                                             <?=$usuario["id"]?>
                                         </th>
                                         <td>
+                                           <img  class="img-fluid" style="width: 80px" src="<?=$usuario["foto_url"]?>">
+                                        </td>
+                                        <td>
                                             <?=$usuario["nombre_completo"]?>
+                                        </td>
+                                        <td>
+                                            <?=$usuario["direccion"]?>
+                                        </td>
+                                        <td>
+                                            <?=$usuario["telefono"]?>
+                                        </td>
+                                        <td>
+                                            <?=$usuario["correo"]?>
                                         </td>
                                         <td>
                                             <?=$usuario["contrasena"]?>

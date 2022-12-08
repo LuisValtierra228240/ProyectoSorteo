@@ -18,13 +18,18 @@ class Registro extends BaseController
             $correo = $_POST["correo"];
             $contra = $_POST["contra"];
             $nombre = $_POST["nombre_completo"];
-
+            $nombre = $_POST["nombre_completo"];
+            $telefono = $_POST["telefono"];
+            $direccion = $_POST["direccion"];
+            $url_imagen = $_POST["url_imagen"];
+            
             $usuarioModel = new UsuarioModel();
             
             //Validar que se no encuentre un usuario registrado con el mismo correo
             $usuarios = $usuarioModel->filtro(0, "", $correo, "");
             if (!isset($usuarios[0] ) ) {
-                $nuevoUsuario = ["correo" => $correo, "contrasena" => $contra, "nombre_completo" => $nombre];
+                $nuevoUsuario = ["correo" => $correo, "contrasena" => $contra, "nombre_completo" => $nombre, 
+                                 "telefono" => $telefono, "direccion" => $direccion, "foto_url" => $url_imagen];
                 if ($usuarioModel->save($nuevoUsuario)) {
                     echo "Guardado correctamente";
                     header("Location: /Login");

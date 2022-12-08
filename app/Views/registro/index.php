@@ -40,10 +40,19 @@
                         <form role="form" method="post" action="<?=base_url()?>/registro/registrar">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Nombre completo" name="nombre_completo" type="text" required autofocus>
+                                    <input class="form-control" placeholder="Nombre completo" name="nombre_completo" type="text" required autofocus user>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Correo" name="correo" type="email" required autofocus>
+                                    <input class="form-control" placeholder="Telefono" name="telefono" type="text" required>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Direccion" name="direccion" type="text" >
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Foto" name="url_imagen" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Correo" name="correo" type="email">
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Introducir nueva contraseña" name="contra" required type="password" value="">

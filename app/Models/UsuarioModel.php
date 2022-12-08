@@ -11,7 +11,10 @@ class UsuarioModel extends Model
     protected $allowedFields = [
         'nombre_completo',
         'correo',
-        'contrasena'
+        'contrasena',
+        'direccion',
+        'telefono',
+        'foto_url'
     ];
 
     public function filtro($id, $nombre_completo, $correo, $contrasena) {
