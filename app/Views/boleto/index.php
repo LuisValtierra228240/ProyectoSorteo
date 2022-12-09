@@ -36,11 +36,11 @@
                                 <thead>
                                     <tr>
                                         <th scope="col" style="width: 10%">id</th>
-                                        <th scope="col">nombre sorteo</th>
+                                        <th scope="col">usuario</th>
                                         <th scope="col">numero de boleto</th>
                                         <th scope="col">sorteo</th>
-                                        <th scope="col">fecha realizacion</th>
-                                        <th scope="col">pagado</th>
+                                        <th scope="col">fecha de compra</th>
+                                        <th scope="col">estado de pago</th>
                                         <th scope="col" style="width: 8%;">acciones</th>
                                     </tr>
                                 </thead>
@@ -54,7 +54,7 @@
                                             <?=$boleto->id_boleto?>
                                         </th>
                                         <td>
-                                            <?=$boleto->nombre_sorteo?>
+                                            <?=$boleto->nombre_usuario?>
                                         </td>
                                         <td>
                                             <?=$boleto->numero_boleto?>
