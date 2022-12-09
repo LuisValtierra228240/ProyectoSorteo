@@ -3,10 +3,10 @@
 <?= $this->section('css') ?>
 
 <!-- DataTables CSS -->
-<link href="../css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+<link href="<?=base_url()?>/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- DataTables Responsive CSS -->
-<link href="../css/dataTables/dataTables.responsive.css" rel="stylesheet">
+<link href="<?=base_url()?>/css/dataTables/dataTables.responsive.css" rel="stylesheet">
 
 <?= $this->endSection() ?>
 
@@ -133,16 +133,16 @@
     }).then((result) => {
         if (result.isConfirmed) {
 
-            location.href = "<?base_url()?>/sorteo/delete/" + id;
+            location.href = "/boleto/delete/" + id;
         }
     })
 }
 </script>
 <!-- DataTables JavaScript -->
-<script src="../js/dataTables/jquery.dataTables.min.js"></script>
-<script src="../js/dataTables/dataTables.bootstrap.min.js"></script>
+<script src="<?=base_url()?>/js/dataTables/jquery.dataTables.min.js"></script>
+<script src="<?=base_url()?>/js/dataTables/dataTables.bootstrap.min.js"></script>
 
 <!-- Sweet Alert 2 JavaScript-->
-<script src="../js/sweetalert2.js"></script>
+<script src="<?=base_url()?>/js/sweetalert2.js"></script>
 
 <?= $this->endSection() ?>

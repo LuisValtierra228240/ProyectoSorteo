@@ -59,6 +59,11 @@ class BoletoModel extends Model
         $db = db_connect();
         $query = $db->query("UPDATE participante SET numero_boleto = $numero_boleto, id_sorteo = $id_sorteo, estado_pago = '$estado_pago', id_usuario = $id_usuario WHERE id = $id");
     }
+
+    public function borrar($id) {
+        $db = db_connect();
+        $query = $db->query("DELETE FROM participante WHERE id = $id");
+    }
     
     /* public function crear($id_sorteo, $id_usuario, $fecha_compra) {
         srand (time());

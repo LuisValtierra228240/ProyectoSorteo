@@ -128,6 +128,12 @@ class Boleto extends BaseController
         return redirect()->to("/boleto/index/".$boleto["id_sorteo"]);
     }
 
+    public function delete($id)
+    {
+        $this->boletoModel->borrar($id);
+        return redirect()->to("/boleto");
+    }
+
     public function Comprar($id_sorteo, $id_usuario) {
         $this->boletoModel->crear($id_sorteo, $id_usuario, date("y/m/d"));
         header("location: /boleto");
