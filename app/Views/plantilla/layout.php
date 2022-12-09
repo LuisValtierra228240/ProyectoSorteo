@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Startmin - Bootstrap Admin Theme</title>
+        <title>Aplicación Sorteos</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="<?=base_url()?>/css/bootstrap.min.css" rel="stylesheet">
@@ -58,11 +58,6 @@
                             <i class="fa fa-user fa-fw"></i> <?= $usuario["nombre"] ?> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
                             <li><a href="/Login/logout"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesion</a>
                             </li>
                         </ul>
@@ -89,10 +84,6 @@
                             </li>
 
                             <li>
-                                <a href="<?=base_url();?>/usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
-                            </li>
-
-                            <li>
                                 <a href="<?=base_url();?>/sorteo"><i class="fa fa-ticket fa-fw"></i> Sorteos</a>
                             </li>
 
@@ -100,40 +91,17 @@
                                 <a href="<?=base_url();?>/boleto"><i class="fa fa-ticket fa-fw"></i> Boletos</a>
                             <li>
 
+                            <li>
+                                <a href="<?=base_url();?>/ganador"><i class="fa fa-user fa-fw"></i> Ganadores</a>
+                            </li>
+
+                            <!-- <li>
+                                <a href="/usuario"><i class="fa fa-user fa-fw"></i> Usuarios</a>
+                            </li> -->
+
                             <!-- <li>
                                 <a href="pagina.php"><i class="fa fa-table fa-fw"></i> Pagina</a>
                             </li> -->
-
-                            <li>
-                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                        </ul>
-                                        <!-- /.nav-third-level -->
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
 
                         </ul>
                     </div>

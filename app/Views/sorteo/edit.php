@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Creación de Sorteo</h1>
+                <h1 class="page-header">Edición de Sorteo</h1>
             </div>
         </div>
 
@@ -14,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Nuevo Sorteo
+                        Editar Sorteo
                     </div>
                     <div class="panel-body">
         

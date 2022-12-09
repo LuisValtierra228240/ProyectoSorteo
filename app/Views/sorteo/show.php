@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Creación de Sorteo</h1>
+                <h1 class="page-header">Vista de Sorteo</h1>
             </div>
         </div>
 
